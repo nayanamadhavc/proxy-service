@@ -6,7 +6,6 @@ import com.flydubai.MutinyProxyGrpc;
 import io.grpc.StatusRuntimeException;
 import io.quarkus.grpc.GrpcClient;
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.ws.rs.BadRequestException;
 import org.junit.jupiter.api.*;
 
 import java.util.concurrent.CompletableFuture;

@@ -7,10 +7,8 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.xml.ws.soap.SOAPFaultException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 /**
  * GreetingService is an implementation of IGreetingMessage.
@@ -34,13 +32,11 @@ public class GreetingService implements IGreetingMessage {
     public HelloSoapResponse getMessage(HelloRequest request) {
         try{
             return helloSoapClient.fetchResponse(request.getClientName());
-        } catch (SOAPFaultException e) {
-            logger.error("Error: Message {}, Fault: {} ", e.getMessage(), e.getFault().getFaultCode());
-            throw new StatusRuntimeException(Status.fromCode(Status.Code.FAILED_PRECONDITION).withDescription("Error Message: %s StatusCode: %s ".format(e.getMessage(), e.getFault().getFaultCode())));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logger.error("Error: ", e);
-            return null;
+            throw new StatusRuntimeException(Status
+                    .fromCode(Status.Code.FAILED_PRECONDITION)
+                    .withDescription("Error Message: %s StatusCode: %s ".format(e.getMessage())));
         }
     }
 }

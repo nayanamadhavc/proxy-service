@@ -5,8 +5,6 @@ import com.flydubai.HelloResponse;
 import com.flydubai.Proxy;
 import com.flydubai.hellosoap.HelloSoapResponse;
 import com.flydubai.service.IGreetingMessage;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import io.quarkus.grpc.GrpcService;
 import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;

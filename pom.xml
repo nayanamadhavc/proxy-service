@@ -43,29 +43,6 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-reactive</artifactId>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-resteasy-client</artifactId>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-resteasy-reactive-jackson</artifactId>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>io.quarkus</groupId>-->
-<!--      <artifactId>quarkus-resteasy-reactive-qute</artifactId>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.eclipse.microprofile.rest.client</groupId>-->
-<!--      <artifactId>microprofile-rest-client-api</artifactId>-->
-<!--      <version>3.0</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.eclipse.microprofile.rest.client</groupId>-->
-<!--      <artifactId>microprofile-rest-client-parent</artifactId>-->
-<!--      <version>3.0</version>-->
-<!--      <type>pom</type>-->
-<!--    </dependency>-->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
@@ -89,21 +66,6 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-spring-di</artifactId>
-    </dependency>
-
-    <!-- Java XML Binding dependency -->
-    <dependency>
-      <groupId>com.sun.xml.bind</groupId>
-      <artifactId>jaxb-impl</artifactId>
-      <version>4.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.xml.ws</groupId>
-      <artifactId>jakarta.xml.ws-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.jws</groupId>
-      <artifactId>jakarta.jws-api</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -152,21 +114,10 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-compiler-plugin</artifactId>-->
-<!--        <version>3.12.1</version>-->
-<!--        <configuration>-->
-<!--          <generatedSourcesDirectory>target/generated-sources</generatedSourcesDirectory>-->
-<!--          <source>16</source>-->
-<!--          <target>16</target>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${compiler-plugin.version}</version>
         <configuration>
-<!--          <generatedSourcesDirectory>target/generated-sources/</generatedSourcesDirectory>-->
           <compilerArgs>
             <arg>-parameters</arg>
           </compilerArgs>
