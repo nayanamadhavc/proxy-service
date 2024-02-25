@@ -1,7 +1,7 @@
 package com.flydubai.client;
 
 import com.flydubai.hellosoap.HelloSoapPortType;
-import com.flydubai.hellosoap.HelloSoapRequest;
+import com.flydubai.hellosoap.HelloSoap;
 import com.flydubai.hellosoap.HelloSoapResponse;
 import io.quarkiverse.cxf.annotation.CXFClient;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -25,14 +25,14 @@ public class HelloSoapClient {
      */
     public HelloSoapResponse fetchResponse(String clientName) {
         // Step 1: Prepare request
-        HelloSoapRequest helloSoapRequest = buildHelloSoapRequest(clientName);
+        HelloSoap helloSoapRequest = buildHelloSoapRequest(clientName);
 
         // Step 2: Invoke the remote soap service
-       return helloSoapPortTypeService.helloSoap(helloSoapRequest);
+       return helloSoapPortTypeService.hello(helloSoapRequest);
     }
 
-    private HelloSoapRequest buildHelloSoapRequest(String clientName) {
-        HelloSoapRequest helloSoapRequest = new HelloSoapRequest();
+    private HelloSoap buildHelloSoapRequest(String clientName) {
+        HelloSoap helloSoapRequest = new HelloSoap();
         helloSoapRequest.setClientName(clientName);
 
         return  helloSoapRequest;
