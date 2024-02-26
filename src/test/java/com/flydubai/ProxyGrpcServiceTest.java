@@ -1,4 +1,4 @@
-package com.flydubai.grpc;
+package java.com.flydubai;
 
 import com.flydubai.HelloRequest;
 import com.flydubai.HelloResponse;
